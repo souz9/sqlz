@@ -1,2 +1,3 @@
 # sqlz
-SQL query helper
+
+SQL query helper.
