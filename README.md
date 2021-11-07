@@ -1,0 +1,2 @@
+# sqlz
+SQL query helper
