@@ -33,8 +33,10 @@ func (r inRows) EachRow(f func() error) error {
 func eachRow(rows Rows, fields []interface{}, f func() error) error {
 	defer rows.Close()
 	for rows.Next() {
-		if err := rows.Scan(fields...); err != nil {
-			return err
+		if len(fields) > 0 {
+			if err := rows.Scan(fields...); err != nil {
+				return err
+			}
 		}
 		if err := f(); err != nil {
 			return err
